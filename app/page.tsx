@@ -4,7 +4,7 @@ import { ModeToggle } from "@/components/mode-toggle"
 import { Search } from "lucide-react"
 import { getCategories } from "@/lib/sanity/queries"
 import { UserNav } from "@/components/user-nav"
-import Image from "next/image"
+
 
 export default async function Home() {
   const categories = await getCategories()
@@ -34,14 +34,14 @@ export default async function Home() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="flex flex-col items-center justify-between md:flex-row space-y-8 md:space-y-0 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32 px-4 md:px-8 lg:px-32">
-          <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left w-full md:w-1/2">
+        <section className="flex flex-col items-center justify-center pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32 px-4 md:px-8 lg:px-32">
+          <div className="flex flex-col items-center gap-4 text-center max-w-3xl">
             <h1 className="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl max-w-full break-words">Docsy</h1>
             <p className="max-w-full md:max-w-[42rem] leading-normal text-muted-foreground sm:text-lg sm:leading-8">
               Find comprehensive guides and documentation to help you start working with our product as quickly as
               possible.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 sm:space-x-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 sm:space-x-4 w-full sm:w-auto mt-4">
               <Button asChild size="lg" className="w-full sm:w-auto">
                 <Link href="/docs">Get Started</Link>
               </Button>
@@ -49,16 +49,6 @@ export default async function Home() {
                 <Link href="/search">Search</Link>
               </Button>
             </div>
-          </div>
-          <div className="rounded-xl overflow-hidden w-full md:w-1/2 max-w-[500px]">
-            <Image
-              src="/hero-img.png"
-              width={500}
-              height={350}
-              className="w-full h-auto object-cover"
-              alt="Documentation"
-              priority
-            />
           </div>
         </section>
         <section className="container space-y-6 py-8 md:py-12 lg:py-24">
